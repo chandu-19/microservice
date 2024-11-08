@@ -11,7 +11,7 @@ COPY my-java-app/pom.xml .
 RUN mvn dependency:go-offline
 
 # Copy the Java source code into the container
-COPY my-java-app/src /app/src
+
 
 # Package the application (skip tests for faster build)
 RUN mvn clean package -DskipTests
