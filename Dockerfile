@@ -5,7 +5,8 @@ FROM maven:3.8-openjdk-11-slim AS build
 WORKDIR /app
 
 # Copy the pom.xml file into the container
-COPY my-java-app/pom.xml .
+COPY pom.xml .
+
 
 # Download the Maven dependencies (this layer will be cached if nothing changes in pom.xml)
 RUN mvn dependency:go-offline
